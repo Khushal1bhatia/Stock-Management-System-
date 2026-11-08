@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Stock Management System">
+  <rect width="64" height="64" rx="15" fill="#123b2e"/>
+  <g fill="none" stroke="#d9f45b" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 4.2) scale(1.45)">
+    <path d="M3.5 10.2 10.5 6.3l7 3.9v8L10.5 22l-7-3.8Z"/>
+    <path d="m3.5 10.2 7 3.9 7-3.9M10.5 14.1V22"/>
+    <path d="M22.5 18.2 29.5 14.3l7 3.9v8l-7 3.8-7-3.8Z"/>
+    <path d="m22.5 18.2 7 3.9 7-3.9M29.5 22.1V30"/>
+    <path d="M19.5 8h3a4 4 0 0 1 4 4v1.2"/>
+    <path d="m24.3 11 2.2 2.2 2.2-2.2"/>
+    <path d="M21 32h-3.5a4 4 0 0 1-4-4v-3.2"/>
+    <path d="m11.3 27 2.2-2.2 2.2 2.2"/>
+  </g>
+</svg>

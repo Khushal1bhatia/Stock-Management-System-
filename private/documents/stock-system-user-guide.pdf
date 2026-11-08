@@ -1,0 +1,97 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 5618 >>
+stream
+q 0.071 0.231 0.180 rg 0.00 827.89 595.28 14.00 re f Q
+BT /F2 8.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 807.89 Tm (STOCK MANAGEMENT SYSTEM) Tj ET
+BT /F2 8.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 494.91 807.89 Tm (ASO USERS) Tj ET
+q 0.875 0.894 0.871 RG 0.7 w 56.00 797.89 m 539.28 797.89 l S Q
+BT /F2 21 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 763.89 Tm (Stock Management System: User Guide) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 735.89 Tm (This guide covers the daily workspace: signing in, moving between sections,) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 721.39 Tm (changing inventory, searching, and keeping access under control.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 691.89 m 539.28 691.89 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 682.89 Tm (Sign in) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 665.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 665.89 Tm (Open the portal and enter the username and password issued to you. Credentials are) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 652.29 Tm (personal; do not share them.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 636.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 636.89 Tm (Sign out from the account menu when you finish, especially on a shared or public) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 623.29 Tm (device.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 607.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 607.89 Tm (If several attempts fail, wait before trying again. Repeated failures are throttled) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 594.29 Tm (and recorded.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 575.89 m 539.28 575.89 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 566.89 Tm (Find your way around) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 549.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 549.89 Tm (The sidebar lists the workspace on desktop; the bottom bar carries the same) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 536.29 Tm (destinations on mobile.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 520.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 520.89 Tm (Workspace covers Overview, Inventory, Movements, and Suppliers.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 505.49 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 505.49 Tm (Masters groups Centre Master, Item Master, and Document Master.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 487.09 m 539.28 487.09 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 478.09 Tm (Work with inventory) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 461.09 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 461.09 Tm (Search by product, SKU, or supplier, then filter by category, supplier, or stock) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 447.49 Tm (status.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 432.09 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 432.09 Tm (Open a product to receive stock, remove stock, or set a physical count. Each action) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 418.49 Tm (asks for a quantity and optional reference.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 403.09 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 403.09 Tm (Every change writes a movement entry and an audit record. Stock cannot be edited) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 389.49 Tm (silently.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 371.09 m 539.28 371.09 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 362.09 Tm (Quick find) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 345.09 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 345.09 Tm (Press Ctrl+K \(Cmd+K on macOS\) or / to open quick find from anywhere in the) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 331.49 Tm (workspace.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 316.09 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 316.09 Tm (Type a product, SKU, or supplier, choose a result with the arrow keys, and press) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 302.49 Tm (Enter to open it.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 284.09 m 539.28 284.09 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 275.09 Tm (Access and read-only areas) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 258.09 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 258.09 Tm (Your role determines which actions are available. If a control is not offered for) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 244.49 Tm (your account, the action is also rejected by the application.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 229.09 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 229.09 Tm (Centre Master, Item Master, and Document Master are read-only reference views.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 213.69 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 213.69 Tm (Reference PDFs open in a new tab. Close the tab when you are finished.) Tj ET
+q 0.875 0.894 0.871 RG 0.7 w 56.00 56.00 m 539.28 56.00 l S Q
+BT /F1 8 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 40.00 Tm (Stock Management System - ASO Users) Tj ET
+BT /F1 8 Tf 0.392 0.439 0.416 rg 1 0 0 1 490.88 40.00 Tm (Page 1 of 1) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Title (Stock Management System: User Guide) /Author (Stock Management System) /Creator (Stock Management System) /Producer (Stock Management System) /CreationDate (D:20261105123838Z) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000257 00000 n 
+0000005927 00000 n 
+0000006024 00000 n 
+0000006126 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 7 0 R >>
+startxref
+6331
+%%EOF

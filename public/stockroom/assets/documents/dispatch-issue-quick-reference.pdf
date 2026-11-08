@@ -1,0 +1,89 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 4841 >>
+stream
+q 0.071 0.231 0.180 rg 0.00 827.89 595.28 14.00 re f Q
+BT /F2 8.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 807.89 Tm (STOCK MANAGEMENT SYSTEM) Tj ET
+BT /F2 8.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 494.91 807.89 Tm (ASO USERS) Tj ET
+q 0.875 0.894 0.871 RG 0.7 w 56.00 797.89 m 539.28 797.89 l S Q
+BT /F2 21 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 763.89 Tm (Dispatch and Issue: Quick Reference) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 735.89 Tm (A dispatch reduces on-hand stock. Check the request, confirm availability, issue) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 721.39 Tm (against a reference, and make sure the recipient and the record agree.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 691.89 m 539.28 691.89 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 682.89 Tm (1. Confirm the request) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 665.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 665.89 Tm (Check the item, quantity, requesting location or person, and the authorisation for) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 652.29 Tm (the issue.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 636.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 636.89 Tm (Confirm the unit of measure; a request for boxes is not a request for pieces.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 621.49 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 621.49 Tm (If the request is outside the approved catalogue, stop and escalate it.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 603.09 m 539.28 603.09 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 594.09 Tm (2. Check availability) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 577.09 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 577.09 Tm (Review on-hand stock and the reorder point before promising a quantity.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 561.69 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 561.69 Tm (Leave enough stock to cover the location's requirement; do not issue the last unit) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 548.09 Tm (without approval.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 532.69 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 532.69 Tm (If stock is short, record the quantity that can be issued and agree the balance as) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 519.09 Tm (a backorder.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 500.69 m 539.28 500.69 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 491.69 Tm (3. Issue the stock) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 474.69 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 474.69 Tm (Go to Inventory, find the product, and choose Remove stock.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 459.29 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 459.29 Tm (Enter the issued quantity and a reference such as a requisition, work order, or) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 445.69 Tm (dispatch note.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 430.29 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 430.29 Tm (Add a note when the issue is partial or urgent. Submit once.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 414.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 414.89 Tm (Over-removal is blocked; stock cannot be driven below zero.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 396.49 m 539.28 396.49 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 387.49 Tm (4. Close out) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 370.49 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 370.49 Tm (Ask the recipient to check the item and quantity before they leave.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 355.09 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 355.09 Tm (Verify the new balance and the Dispatch movement in the audit history.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 339.69 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 339.69 Tm (File the signed requisition or dispatch note with the movement reference.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 324.29 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 324.29 Tm (Returns come back through Receive stock, with the original reference in the note.) Tj ET
+q 0.875 0.894 0.871 RG 0.7 w 56.00 56.00 m 539.28 56.00 l S Q
+BT /F1 8 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 40.00 Tm (Stock Management System - ASO Users) Tj ET
+BT /F1 8 Tf 0.392 0.439 0.416 rg 1 0 0 1 490.88 40.00 Tm (Page 1 of 1) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Title (Dispatch and Issue: Quick Reference) /Author (Stock Management System) /Creator (Stock Management System) /Producer (Stock Management System) /CreationDate (D:20261105123838Z) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000257 00000 n 
+0000005150 00000 n 
+0000005247 00000 n 
+0000005349 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 7 0 R >>
+startxref
+5554
+%%EOF

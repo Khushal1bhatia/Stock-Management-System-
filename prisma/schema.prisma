@@ -1,0 +1,200 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  username     String    @unique
+  name         String
+  initials     String
+  passwordHash String
+  role         String    @default("OPERATOR")
+  active       Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  sessions     Session[]
+  movements    Movement[] @relation("MovementActor")
+
+  @@index([role])
+}
+
+model Session {
+  id         String   @id @default(cuid())
+  tokenHash  String   @unique
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  lastUsedAt DateTime @default(now())
+  ipAddress  String?
+  userAgent  String?
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model Supplier {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  contact   String
+  email     String
+  leadDays  Int
+  initials  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  products  Product[]
+}
+
+model Product {
+  id         String     @id @default(cuid())
+  name       String
+  sku        String     @unique
+  category   String
+  supplierId String
+  supplier   Supplier   @relation(fields: [supplierId], references: [id], onDelete: Restrict)
+  unit       String
+  costCents  Int
+  priceCents Int
+  stock      Int        @default(0)
+  reorder    Int
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  movements  Movement[]
+
+  @@index([supplierId])
+  @@index([category])
+  @@index([name])
+}
+
+model Movement {
+  id          String   @id @default(cuid())
+  productId   String?
+  product     Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  productName String
+  sku         String
+  unit        String
+  type        String
+  qty         Int
+  reference   String
+  note        String
+  actorId     String?
+  actor       User?    @relation("MovementActor", fields: [actorId], references: [id], onDelete: SetNull)
+  actorName   String
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([productId])
+  @@index([type])
+  @@index([actorId])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actorName  String
+  action     String
+  entityType String?
+  entityId   String?
+  detail     String?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([actorId])
+  @@index([action])
+}
+
+model Centre {
+  id           String              @id @default(cuid())
+  name         String              @unique
+  slug         String              @unique
+  code         String
+  type         String              @default("Centre")
+  sortOrder    Int                 @default(0)
+  parentId     String?
+  parent       Centre?             @relation("CentreHierarchy", fields: [parentId], references: [id], onDelete: SetNull)
+  children     Centre[]            @relation("CentreHierarchy")
+  requirements CentreRequirement[]
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+
+  @@index([type])
+  @@index([parentId])
+}
+
+model CatalogueItem {
+  id           String              @id @default(cuid())
+  name         String
+  slug         String              @unique
+  sku          String              @unique
+  category     String
+  unit         String
+  costCents    Int
+  sortOrder    Int                 @default(0)
+  requirements CentreRequirement[]
+  departments  DepartmentItem[]
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+
+  @@index([category])
+  @@index([name])
+}
+
+model CentreRequirement {
+  id        String        @id @default(cuid())
+  centreId  String
+  centre    Centre        @relation(fields: [centreId], references: [id], onDelete: Cascade)
+  itemId    String
+  item      CatalogueItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  required  Int
+  onHand    Int           @default(0)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@unique([centreId, itemId])
+  @@index([itemId])
+}
+
+model Department {
+  id          String           @id @default(cuid())
+  name        String
+  slug        String           @unique
+  description String
+  sortOrder   Int              @default(0)
+  items       DepartmentItem[]
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@index([name])
+}
+
+model DepartmentItem {
+  departmentId String
+  department   Department    @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  itemId       String
+  item         CatalogueItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@id([departmentId, itemId])
+  @@index([itemId])
+}
+
+model Document {
+  id          String   @id @default(cuid())
+  title       String   @unique
+  slug        String   @unique
+  description String
+  category    String
+  fileName    String
+  pages       Int      @default(1)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([sortOrder])
+}

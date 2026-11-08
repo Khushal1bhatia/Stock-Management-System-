@@ -1,0 +1,100 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 5916 >>
+stream
+q 0.071 0.231 0.180 rg 0.00 827.89 595.28 14.00 re f Q
+BT /F2 8.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 807.89 Tm (STOCK MANAGEMENT SYSTEM) Tj ET
+BT /F2 8.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 494.91 807.89 Tm (ASO USERS) Tj ET
+q 0.875 0.894 0.871 RG 0.7 w 56.00 797.89 m 539.28 797.89 l S Q
+BT /F2 21 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 763.89 Tm (Roles, Permissions and Audit: Reference) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 735.89 Tm (Access is part of inventory control. Every account should have the smallest role) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 721.39 Tm (that lets the person do their job, and every material change should be) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 706.89 Tm (attributable.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 677.39 m 539.28 677.39 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 668.39 Tm (Roles) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 651.39 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 651.39 Tm (Administrators manage products, stock, master data, and other accounts, including) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 637.79 Tm (deletion where the application allows it.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 622.39 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 622.39 Tm (Operators handle day-to-day receiving, dispatch, and physical counts. They cannot) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 608.79 Tm (remove products.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 593.39 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 593.39 Tm (A role is a boundary, not a promotion path. Change it only with an approved) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 579.79 Tm (request.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 561.39 m 539.28 561.39 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 552.39 Tm (Enforcement) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 535.39 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 535.39 Tm (Permissions are checked in the server action or route that performs the work, not) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 521.79 Tm (only by hiding interface controls.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 506.39 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 506.39 Tm (Read-only masters and reference documents still require a signed-in session.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 490.99 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 490.99 Tm (Input is validated on the server; filters and identifiers never become raw database) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 477.39 Tm (commands.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 458.99 m 539.28 458.99 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 449.99 Tm (Sessions and passwords) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 432.99 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 432.99 Tm (Sessions use an httpOnly cookie. Only a hash of the session token is stored, and) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 419.39 Tm (sessions expire.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 403.99 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 403.99 Tm (Password changes require the current password and revoke other sessions for that) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 390.39 Tm (account.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 374.99 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 374.99 Tm (Sign out on shared devices. Never send credentials through chat or email.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 356.59 m 539.28 356.59 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 347.59 Tm (Audit trail) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 330.59 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 330.59 Tm (Sign-in, sign-out, failed sign-in, password changes, product changes, receipts,) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 316.99 Tm (dispatches, and counts are recorded.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 301.59 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 301.59 Tm (Entries keep the actor, action, entity, IP address where available, and timestamp.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 286.19 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 286.19 Tm (Audit records are append-only from the application. Define a retention period) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 272.59 Tm (before pruning them.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 254.19 m 539.28 254.19 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 245.19 Tm (Routine checks) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 228.19 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 228.19 Tm (Review inactive accounts and remove access promptly when someone leaves.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 212.79 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 212.79 Tm (Investigate repeated failed sign-ins and unusual after-hours activity.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 197.39 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 197.39 Tm (Back up the database and test restoration; an audit trail is only useful if the) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 183.79 Tm (data survives.) Tj ET
+q 0.875 0.894 0.871 RG 0.7 w 56.00 56.00 m 539.28 56.00 l S Q
+BT /F1 8 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 40.00 Tm (Stock Management System - ASO Users) Tj ET
+BT /F1 8 Tf 0.392 0.439 0.416 rg 1 0 0 1 490.88 40.00 Tm (Page 1 of 1) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Title (Roles, Permissions and Audit: Reference) /Author (Stock Management System) /Creator (Stock Management System) /Producer (Stock Management System) /CreationDate (D:20261105123838Z) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000257 00000 n 
+0000006225 00000 n 
+0000006322 00000 n 
+0000006424 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 7 0 R >>
+startxref
+6633
+%%EOF

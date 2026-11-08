@@ -1,0 +1,96 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 5471 >>
+stream
+q 0.071 0.231 0.180 rg 0.00 827.89 595.28 14.00 re f Q
+BT /F2 8.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 807.89 Tm (STOCK MANAGEMENT SYSTEM) Tj ET
+BT /F2 8.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 494.91 807.89 Tm (ASO USERS) Tj ET
+q 0.875 0.894 0.871 RG 0.7 w 56.00 797.89 m 539.28 797.89 l S Q
+BT /F2 21 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 763.89 Tm (Physical Stock Counts: Quick Reference) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 735.89 Tm (A physical count is the control of last resort. Count what is there, record the) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 721.39 Tm (truth, and investigate differences instead of forcing the number to match the) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 706.89 Tm (system.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 677.39 m 539.28 677.39 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 668.39 Tm (1. Prepare) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 651.39 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 651.39 Tm (Choose the area and freeze dispatches and receipts for it while the count runs.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 635.99 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 635.99 Tm (Print a count sheet from the current inventory view; include SKU, unit, location,) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 622.39 Tm (and system quantity.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 606.99 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 606.99 Tm (Assign counters who do not normally work the same area when segregation is) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 593.39 Tm (possible.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 574.99 m 539.28 574.99 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 565.99 Tm (2. Count) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 548.99 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 548.99 Tm (Count one location or bin at a time. Count sealed packs separately from loose) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 535.39 Tm (units.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 519.99 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 519.99 Tm (Record quantities in the product's unit. Do not convert between units on the sheet.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 504.59 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 504.59 Tm (Record empty locations as zero; do not leave a line blank.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 489.19 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 489.19 Tm (Sign and date the sheet. A second counter should verify high-value or high-risk) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 475.59 Tm (items.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 457.19 m 539.28 457.19 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 448.19 Tm (3. Record the count) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 431.19 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 431.19 Tm (Go to Inventory, open the product, and choose Set count.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 415.79 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 415.79 Tm (Enter the counted quantity, a reference such as COUNT-YYYY-MM-DD, and a note for) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 402.19 Tm (the area or shift.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 386.79 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 386.79 Tm (Do not adjust the counted number to match the expected balance. The application) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 373.19 Tm (records the variance.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 354.79 m 539.28 354.79 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 345.79 Tm (4. Investigate and close) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 328.79 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 328.79 Tm (Recount before accepting a variance. Check for unrecorded receipts, dispatches,) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 315.19 Tm (transfers, or misplacement.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 299.79 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 299.79 Tm (Document the cause and the corrective action; escalate material or repeated) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 286.19 Tm (differences.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 270.79 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 270.79 Tm (Have a supervisor review and sign off. Keep count sheets and movement references) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 257.19 Tm (together.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 241.79 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 241.79 Tm (Watch variance trends by item and location; a repeating gap usually points to a) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 228.19 Tm (process problem.) Tj ET
+q 0.875 0.894 0.871 RG 0.7 w 56.00 56.00 m 539.28 56.00 l S Q
+BT /F1 8 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 40.00 Tm (Stock Management System - ASO Users) Tj ET
+BT /F1 8 Tf 0.392 0.439 0.416 rg 1 0 0 1 490.88 40.00 Tm (Page 1 of 1) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Title (Physical Stock Counts: Quick Reference) /Author (Stock Management System) /Creator (Stock Management System) /Producer (Stock Management System) /CreationDate (D:20261105123838Z) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000257 00000 n 
+0000005780 00000 n 
+0000005877 00000 n 
+0000005979 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 7 0 R >>
+startxref
+6187
+%%EOF

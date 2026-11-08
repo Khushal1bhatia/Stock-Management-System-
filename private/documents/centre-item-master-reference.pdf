@@ -1,0 +1,91 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 5084 >>
+stream
+q 0.071 0.231 0.180 rg 0.00 827.89 595.28 14.00 re f Q
+BT /F2 8.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 807.89 Tm (STOCK MANAGEMENT SYSTEM) Tj ET
+BT /F2 8.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 494.91 807.89 Tm (ASO USERS) Tj ET
+q 0.875 0.894 0.871 RG 0.7 w 56.00 797.89 m 539.28 797.89 l S Q
+BT /F2 21 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 763.89 Tm (Centre and Item Master: Reference) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 735.89 Tm (Centre Master and Item Master share one catalogue. A requirement line is the same) Tj ET
+BT /F1 10.5 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 721.39 Tm (record whether you open it from a location or from an item.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 691.89 m 539.28 691.89 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 682.89 Tm (Centre hierarchy) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 665.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 665.89 Tm (Locations are organised as Centre, SubCentre, and Point. Each location has a unique) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 652.29 Tm (badge code and, where applicable, a parent centre.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 636.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 636.89 Tm (The hierarchy is a reporting structure, not a stock transfer path. Moving stock) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 623.29 Tm (between locations still needs a receipt and a dispatch.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 607.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 607.89 Tm (Open a centre to see its children and every catalogue item it tracks.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 589.49 m 539.28 589.49 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 580.49 Tm (Requirement lines) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 563.49 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 563.49 Tm (Each location tracks the shared catalogue with a required quantity and an on-hand) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 549.89 Tm (quantity.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 534.49 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 534.49 Tm (Required quantities differ by location; the same item can need one unit at a point) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 520.89 Tm (and several at a centre.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 505.49 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 505.49 Tm (Requirements are master data. Day-to-day stock changes update on-hand quantities,) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 491.89 Tm (not the requirement.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 473.49 m 539.28 473.49 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 464.49 Tm (Coverage and status) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 447.49 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 447.49 Tm (Covered: on hand meets or exceeds the requirement.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 432.09 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 432.09 Tm (Short: on hand is greater than zero but below the requirement.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 416.69 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 416.69 Tm (Missing: on hand is zero while the requirement is greater than zero.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 401.29 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 401.29 Tm (Shortfall is the requirement minus on hand, never less than zero.) Tj ET
+q 0.875 0.894 0.871 RG 0.6 w 56.00 382.89 m 539.28 382.89 l S Q
+BT /F2 11.5 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 373.89 Tm (Reading health) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 356.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 356.89 Tm (A location is Critical when any line is missing, Needs stock when any line is) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 343.29 Tm (short, and Ready when every line is covered.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 327.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 327.89 Tm (An item view aggregates the same lines across all locations, so the two masters) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 314.29 Tm (always agree.) Tj ET
+BT /F1 10.25 Tf 0.071 0.231 0.180 rg 1 0 0 1 56.00 298.89 Tm (•) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 298.89 Tm (Use the shortfall total to prioritise replenishment, then open the location or item) Tj ET
+BT /F1 10.25 Tf 0.082 0.110 0.094 rg 1 0 0 1 70.00 285.29 Tm (for the detail.) Tj ET
+q 0.875 0.894 0.871 RG 0.7 w 56.00 56.00 m 539.28 56.00 l S Q
+BT /F1 8 Tf 0.392 0.439 0.416 rg 1 0 0 1 56.00 40.00 Tm (Stock Management System - ASO Users) Tj ET
+BT /F1 8 Tf 0.392 0.439 0.416 rg 1 0 0 1 490.88 40.00 Tm (Page 1 of 1) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Title (Centre and Item Master: Reference) /Author (Stock Management System) /Creator (Stock Management System) /Producer (Stock Management System) /CreationDate (D:20261105123838Z) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000257 00000 n 
+0000005393 00000 n 
+0000005490 00000 n 
+0000005592 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 7 0 R >>
+startxref
+5795
+%%EOF

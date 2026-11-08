@@ -1,0 +1,17 @@
+# Never upload local secrets or the SQLite database to Vercel.
+.env
+.env.local
+.env.development
+.env.production
+prisma/*.db
+prisma/*.db-journal
+prisma/*.db-wal
+prisma/*.db-shm
+
+# Build output and dependencies (Vercel rebuilds these).
+.next
+node_modules
+coverage
+out
+.vercel
+*.log

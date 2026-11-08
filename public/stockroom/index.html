@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Management System — ASO Inventory Control</title>
+  <meta name="description" content="Stock Management System for ASO Users: track products, stock movements, suppliers, centres, item requirements, reference documents, and low-stock alerts in one workspace." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Stock Management System" />
+  <meta name="application-name" content="Stock Management System" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f2ebdc" id="meta-theme-color" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Stock Mgmt" />
+  <link rel="canonical" href="./" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <script>
+    // Browsers cannot fetch a web manifest from file://; drop the link there so
+    // the offline launcher keeps a clean console. Hosted builds keep it.
+    if (location.protocol === "file:") document.querySelector('link[rel="manifest"]')?.remove();
+  </script>
+
+  <script>
+    (() => {
+      try {
+        const session = JSON.parse(sessionStorage.getItem("stockroom.auth.v1") || "null");
+        const username = session && typeof session.username === "string" ? session.username : "";
+        const isAdmin = Boolean(session && (session.isAdmin === true || (session.isAdmin === undefined && username === "aso.admin")));
+        const key = username ? `stockroom.theme.v1:${username}` : "stockroom.theme.v1";
+        const dark = isAdmin && localStorage.getItem(key) === "dark";
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+        const meta = document.getElementById("meta-theme-color");
+        if (meta) meta.setAttribute("content", dark ? "#0f1511" : "#f2ebdc");
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Stock Management System" />
+  <meta property="og:title" content="Stock Management System — ASO Inventory Control" />
+  <meta property="og:description" content="Stock Management System for ASO Users: track products, stock movements, suppliers, centres, item requirements, reference documents, and low-stock alerts in one workspace." />
+  <meta property="og:url" content="./" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="assets/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Stock Management System — inventory control for ASO Users" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stock Management System — ASO Inventory Control" />
+  <meta name="twitter:description" content="Stock Management System for ASO Users: track products, stock movements, suppliers, centres, item requirements, reference documents, and low-stock alerts in one workspace." />
+  <meta name="twitter:image" content="assets/og-cover.png" />
+  <meta name="twitter:image:alt" content="Stock Management System — inventory control for ASO Users" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Stock Management System",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Inventory Management",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript and a modern browser.",
+      "description": "Stock Management System for ASO Users: track products, stock movements, suppliers, centres, item requirements, reference documents, and low-stock alerts in one workspace.",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "Inventory tracking",
+        "Stock movement history",
+        "Supplier management",
+        "Centre inventory and requirements",
+        "Department grouping and stock cover",
+        "Item master with per-centre requirements",
+        "Document master with six reference PDFs",
+        "Low-stock alerts",
+        "CSV export"
+      ]
+    }
+  </script>
+
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="views.css" />
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <a class="skip-link" href="#app">Skip to content</a>
+
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.3 7.5 12 2.6l8.7 4.9v9L12 21.4l-8.7-4.9v-9Z"/><path d="m3.5 7.7 8.5 4.9 8.5-4.9M12 12.6v8.8"/></symbol>
+    <symbol id="i-flow" viewBox="0 0 24 24"><path d="M7 4v15m0 0-3.2-3.2M7 19l3.2-3.2M17 20V5m0 0-3.2 3.2M17 5l3.2 3.2"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6.5h11v10H3zM14 10h3.6l3.4 3.4v3.1h-7z"/><circle cx="7" cy="18.5" r="2"/><circle cx="17.5" cy="18.5" r="2"/></symbol>
+    <symbol id="i-centre" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-12A7 7 0 1 0 5 9c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></symbol>
+    <symbol id="i-items" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.4"/><rect x="14" y="4" width="7" height="7" rx="1.4"/><rect x="3" y="15" width="7" height="6" rx="1.2"/><path d="M14 16h7M14 20h7"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h4l2 2.5h7A2.5 2.5 0 0 1 21 9v8.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5v-11Z"/></symbol>
+    <symbol id="i-document" viewBox="0 0 24 24"><path d="M6 3.5h8l4 4V20.5H6z"/><path d="M14 3.5v4h4M9 12h6M9 15.5h6M9 8.5h2"/></symbol>
+    <symbol id="i-departments" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1.2"/><rect x="3" y="16" width="7" height="5" rx="1.2"/><rect x="14" y="16" width="7" height="5" rx="1.2"/><path d="M12 8v4M6.5 16v-4h11v4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="10.5" rx="2"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10"/><path d="M12 14.5v2"/></symbol>
+    <symbol id="i-unlock" viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="10.5" rx="2"/><path d="M8 10V7.5a4 4 0 0 1 7.5-1.9"/><path d="M12 14.5v2"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4.5 4.5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8.5a6 6 0 0 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M10.3 20.5a2 2 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.4 14.2A8.5 8.5 0 0 1 9.8 3.6 8.5 8.5 0 1 0 20.4 14.2Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 21h16"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.5" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5L20 6.5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4.5"/><circle cx="12" cy="17" r=".4" fill="currentColor"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 21h16"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M12 21V9m0 0 5 5m-5-5-5 5M4 3h16"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 4h6m4 0h6M4 12h11m4 0h1M4 20h3m4 0h9"/><circle cx="12" cy="4" r="2"/><circle cx="17" cy="12" r="2"/><circle cx="9" cy="20" r="2"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20.5 8A9 9 0 1 0 21 12M21 3v5h-5"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+    <symbol id="i-sort" viewBox="0 0 24 24"><path d="M8 9.5 12 5l4 4.5M8 14.5 12 19l4-4.5"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z"/><path d="M9 8h6M9 12h6"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M8 9v6M11 9v6M14 9v6M17 9v6"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M10 4H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20H10M15 16l4-4-4-4M9 12h10"/></symbol>
+    <symbol id="i-sync-boxes" viewBox="0 0 40 40"><path d="M3.5 10.2 10.5 6.3l7 3.9v8L10.5 22l-7-3.8Z"/><path d="m3.5 10.2 7 3.9 7-3.9M10.5 14.1V22"/><path d="M22.5 18.2 29.5 14.3l7 3.9v8l-7 3.8-7-3.8Z"/><path d="m22.5 18.2 7 3.9 7-3.9M29.5 22.1V30"/><path d="M19.5 8h3a4 4 0 0 1 4 4v1.2"/><path d="m24.3 11 2.2 2.2 2.2-2.2"/><path d="M21 32h-3.5a4 4 0 0 1-4-4v-3.2"/><path d="m11.3 27 2.2-2.2 2.2 2.2"/></symbol>
+  </svg>
+
+  <div class="login-gate" id="login-gate">
+    <main class="login-main">
+      <section class="login-card" aria-labelledby="login-title">
+        <header class="login-brand">
+          <span class="login-logo" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><use href="#i-sync-boxes"/></svg>
+          </span>
+          <h1 id="login-title">Stock Management System</h1>
+          <p class="login-subtitle">Inventory Management</p>
+        </header>
+
+        <form id="login-form" class="login-form" novalidate>
+          <div class="login-fields">
+            <div class="login-field">
+              <label for="login-username">Username</label>
+              <input class="input" id="login-username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" aria-describedby="login-error" required placeholder="Enter username" />
+            </div>
+            <div class="login-field">
+              <label for="login-password">Password</label>
+              <div class="login-password">
+                <input class="input" id="login-password" name="password" type="password" autocomplete="current-password" aria-describedby="login-error" required placeholder="Enter password" />
+                <button class="login-show" type="button" data-action="toggle-password" aria-label="Show password" aria-pressed="false">Show</button>
+              </div>
+            </div>
+          </div>
+          <p class="login-error" id="login-error" role="alert" hidden></p>
+          <button class="btn btn--primary login-submit" type="submit">
+            Sign in
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </button>
+        </form>
+
+        <noscript>
+          <p class="login-noscript">JavaScript is required to sign in. Enable JavaScript in your browser, then reload this page.</p>
+        </noscript>
+
+        <footer class="login-foot">
+          <span>© 2026 Stock Management System</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="app" id="app-shell" hidden>
+    <aside class="sidebar" aria-label="Sidebar">
+      <a class="brand" href="#/overview">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><use href="#i-sync-boxes"/></svg>
+        </span>
+        <span class="brand__text">
+          <strong>Stock Management System</strong>
+          <small>Period : FY 2026-27</small>
+        </span>
+      </a>
+      <div class="sidebar__rule" aria-hidden="true"></div>
+
+      <nav class="nav" aria-label="Workspace">
+        <span class="nav__label">Workspace</span>
+        <a class="nav__item" href="#/overview" data-nav="overview" title="Overview">
+          <svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>
+          <span class="nav__text">Overview</span>
+        </a>
+        <a class="nav__item" href="#/inventory" data-nav="inventory" title="Inventory">
+          <svg class="icon" aria-hidden="true"><use href="#i-box"/></svg>
+          <span class="nav__text">Inventory</span>
+        </a>
+        <a class="nav__item" href="#/movements" data-nav="movements" title="Movements">
+          <svg class="icon" aria-hidden="true"><use href="#i-flow"/></svg>
+          <span class="nav__text">Movements</span>
+        </a>
+        <a class="nav__item" href="#/suppliers" data-nav="suppliers" title="Suppliers">
+          <svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg>
+          <span class="nav__text">Suppliers</span>
+        </a>
+        <a class="nav__item" href="#/departments" data-nav="departments" title="Departments">
+          <svg class="icon" aria-hidden="true"><use href="#i-departments"/></svg>
+          <span class="nav__text">Departments</span>
+        </a>
+        <span class="nav__label nav__label--section">Masters</span>
+        <div class="nav__group" data-masters-group>
+          <button class="nav__group-toggle" type="button" data-action="toggle-masters" aria-expanded="false" aria-controls="masters-nav">
+            <svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg>
+            <span class="nav__text">Masters</span>
+            <svg class="icon nav__chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+          </button>
+          <div class="nav__sub" id="masters-nav">
+            <a class="nav__item" href="#/centres" data-nav="centres" title="Centre Master">
+              <svg class="icon" aria-hidden="true"><use href="#i-centre"/></svg>
+              <span class="nav__text">Centre Master</span>
+            </a>
+            <a class="nav__item" href="#/items" data-nav="items" title="Item Master">
+              <svg class="icon" aria-hidden="true"><use href="#i-items"/></svg>
+              <span class="nav__text">Item Master</span>
+            </a>
+            <a class="nav__item" href="#/documents" data-nav="documents" title="Document Master">
+              <svg class="icon" aria-hidden="true"><use href="#i-document"/></svg>
+              <span class="nav__text">Document Master</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="side-attention" data-side-attention>
+        <div class="side-attention__top">
+          <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+          <span>Attention</span>
+        </div>
+        <strong><span data-attention-count>0</span> items need restock</strong>
+        <p data-attention-copy>Stock is below its reorder point.</p>
+        <a href="#/inventory" data-action="review-attention" class="side-attention__link">
+          Review queue <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+
+      <div class="sidebar__foot">
+        <div class="profile">
+          <span class="avatar avatar--dark" aria-hidden="true" data-user-initials>KB</span>
+          <div class="profile__text">
+            <strong data-user-name>Khushal Bhatia.1</strong>
+            <span><span data-user-scope>ASO Users</span> · <span data-user-role>Admin</span></span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="shell">
+      <header class="topbar">
+        <div class="topbar__head">
+          <div class="mobile-brand" aria-hidden="true">
+            <strong>Stock Management System</strong>
+          </div>
+          <div class="page-heading">
+            <h1 id="page-title">Overview</h1>
+            <p id="page-subtitle"></p>
+          </div>
+        </div>
+        <div class="topbar__actions">
+          <button class="lock-trigger" type="button" data-action="toggle-section-lock" aria-pressed="false" hidden>
+            <svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>
+            <span data-lock-label>Lock section</span>
+          </button>
+          <button class="search-trigger" type="button" data-action="open-search" aria-label="Search stock Ctrl K">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <span class="search-trigger__text">Search stock</span>
+            <kbd data-kbd>Ctrl K</kbd>
+          </button>
+          <button class="theme-cord" type="button" data-action="toggle-theme" role="switch" aria-checked="false" aria-label="Dark theme" title="Pull the cord for dark theme">
+            <span class="theme-cord__mount" aria-hidden="true"></span>
+            <span class="theme-cord__drop" aria-hidden="true">
+              <span class="theme-cord__cord"></span>
+              <span class="theme-cord__handle"></span>
+            </span>
+          </button>
+          <div class="notif-wrap">
+            <button class="icon-btn" type="button" data-action="toggle-notifications" aria-label="Restock alerts" aria-expanded="false" aria-controls="notif-panel">
+              <svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg>
+              <span class="notif-dot" data-notif-dot hidden></span>
+            </button>
+            <div class="notif-panel" id="notif-panel" hidden>
+              <div class="notif-panel__head">
+                <div>
+                  <strong>Restock alerts</strong>
+                  <span data-notif-caption>Below reorder point</span>
+                </div>
+                <button class="icon-btn icon-btn--small" type="button" data-action="close-notifications" aria-label="Close alerts">
+                  <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+                </button>
+              </div>
+              <div class="notif-list" data-notif-list></div>
+              <button class="notif-panel__foot" type="button" data-action="review-attention">
+                Open restock queue <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="account-wrap">
+            <button class="avatar avatar--button" type="button" data-action="toggle-account" aria-label="Account menu" aria-expanded="false" aria-controls="account-panel">
+              <span data-user-initials>KB</span>
+            </button>
+            <div class="account-panel" id="account-panel" hidden>
+              <div class="account-panel__head">
+                <span class="avatar avatar--dark" aria-hidden="true" data-user-initials>KB</span>
+                <div class="account-panel__id">
+                  <strong data-user-name>Khushal Bhatia.1</strong>
+                  <span><span data-user-username>aso.admin</span> · <span data-user-scope>ASO Users</span></span>
+                </div>
+              </div>
+              <div class="account-panel__role"><span data-user-role>Administrator</span> access</div>
+              <div class="account-panel__appearance">
+                <span class="account-panel__appearance-label">Appearance</span>
+                <div class="theme-segment" role="group" aria-label="Appearance">
+                  <button type="button" data-action="set-theme" data-theme-value="light" aria-pressed="true">
+                    <svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg> Light
+                  </button>
+                  <button type="button" data-action="set-theme" data-theme-value="dark" aria-pressed="false">
+                    <svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg> Dark
+                  </button>
+                </div>
+              </div>
+              <button class="account-panel__logout" type="button" data-action="logout">
+                <svg class="icon" aria-hidden="true"><use href="#i-logout"/></svg>Sign out
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="section-lock-banner" id="section-lock-banner" role="status" hidden>
+        <svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>
+        <p>
+          <strong data-lock-title>Section locked</strong>
+          <span data-lock-copy>An administrator has paused adding, editing, and removing records in this section.</span>
+        </p>
+      </div>
+
+      <main class="main" id="app" tabindex="-1"></main>
+
+      <footer class="app-foot">
+        <span>© 2026 Stock Management System</span>
+        <span>Inventory control · INR</span>
+      </footer>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a class="mobile-nav__item" href="#/overview" data-nav="overview">
+      <svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span>Overview</span>
+    </a>
+    <a class="mobile-nav__item" href="#/inventory" data-nav="inventory">
+      <svg class="icon" aria-hidden="true"><use href="#i-box"/></svg><span>Inventory</span>
+    </a>
+    <a class="mobile-nav__item" href="#/movements" data-nav="movements" aria-label="Moves" title="Movements">
+      <svg class="icon" aria-hidden="true"><use href="#i-flow"/></svg><span aria-hidden="true">Moves</span>
+    </a>
+    <a class="mobile-nav__item" href="#/suppliers" data-nav="suppliers">
+      <svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg><span>Suppliers</span>
+    </a>
+    <a class="mobile-nav__item" href="#/departments" data-nav="departments" aria-label="Depts" title="Departments">
+      <svg class="icon" aria-hidden="true"><use href="#i-departments"/></svg><span aria-hidden="true">Depts</span>
+    </a>
+    <a class="mobile-nav__item" href="#/centres" data-nav="centres">
+      <svg class="icon" aria-hidden="true"><use href="#i-centre"/></svg><span>Centres</span>
+    </a>
+    <a class="mobile-nav__item" href="#/items" data-nav="items">
+      <svg class="icon" aria-hidden="true"><use href="#i-items"/></svg><span>Items</span>
+    </a>
+    <a class="mobile-nav__item" href="#/documents" data-nav="documents" aria-label="Docs" title="Document Master">
+      <svg class="icon" aria-hidden="true"><use href="#i-document"/></svg><span aria-hidden="true">Docs</span>
+    </a>
+  </nav>
+
+  <!-- Product add / edit -->
+  <dialog id="product-dialog" class="dialog" aria-labelledby="product-dialog-title">
+    <form id="product-form" class="dialog__card" novalidate>
+      <header class="dialog__head">
+        <div>
+          <h2 id="product-dialog-title">Add product</h2>
+          <p id="product-dialog-sub">Create a new SKU in the inventory.</p>
+        </div>
+        <button class="icon-btn icon-btn--small" type="button" data-action="close-dialog" aria-label="Close dialog">
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </header>
+      <div class="dialog__body">
+        <input type="hidden" name="id" id="product-id" />
+        <div class="form-grid">
+          <div class="field field--full">
+            <label for="product-name">Product name</label>
+            <input class="input" id="product-name" name="name" type="text" autocomplete="off" maxlength="80" required placeholder="e.g. Arc USB-C Hub" />
+            <span class="field-error" data-error-for="name"></span>
+          </div>
+          <div class="field">
+            <label for="product-sku">SKU</label>
+            <input class="input input--mono" id="product-sku" name="sku" type="text" autocomplete="off" maxlength="24" required placeholder="AUD-4821" />
+            <span class="field-error" data-error-for="sku"></span>
+          </div>
+          <div class="field">
+            <label for="product-category">Category</label>
+            <div class="select-wrap">
+              <select class="input" id="product-category" name="category" required></select>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </div>
+            <span class="field-error" data-error-for="category"></span>
+          </div>
+          <div class="field">
+            <label for="product-supplier">Supplier</label>
+            <div class="select-wrap">
+              <select class="input" id="product-supplier" name="supplier" required></select>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </div>
+            <span class="field-error" data-error-for="supplier"></span>
+          </div>
+          <div class="field">
+            <label for="product-unit">Unit</label>
+            <div class="select-wrap">
+              <select class="input" id="product-unit" name="unit" required>
+                <option value="pcs">pcs</option>
+                <option value="sets">sets</option>
+                <option value="pairs">pairs</option>
+                <option value="boxes">boxes</option>
+                <option value="packs">packs</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </div>
+            <span class="field-error" data-error-for="unit"></span>
+          </div>
+          <div class="field">
+            <label for="product-cost">Unit cost (INR)</label>
+            <input class="input input--num" id="product-cost" name="cost" type="number" min="0" step="0.01" inputmode="decimal" required placeholder="0.00" />
+            <span class="field-error" data-error-for="cost"></span>
+          </div>
+          <div class="field">
+            <label for="product-price">Sale price (INR)</label>
+            <input class="input input--num" id="product-price" name="price" type="number" min="0" step="0.01" inputmode="decimal" required placeholder="0.00" />
+            <span class="field-error" data-error-for="price"></span>
+          </div>
+          <div class="field">
+            <label for="product-stock" id="product-stock-label">Opening stock</label>
+            <input class="input input--num" id="product-stock" name="stock" type="number" min="0" step="1" inputmode="numeric" placeholder="0" />
+            <span class="field-error" data-error-for="stock"></span>
+          </div>
+          <div class="field">
+            <label for="product-reorder">Reorder point</label>
+            <input class="input input--num" id="product-reorder" name="reorder" type="number" min="0" step="1" inputmode="numeric" required placeholder="10" />
+            <span class="field-error" data-error-for="reorder"></span>
+          </div>
+          <p class="form-note field--full" data-product-stock-note hidden></p>
+        </div>
+      </div>
+      <footer class="dialog__foot">
+        <button class="btn btn--ghost" type="button" data-action="close-dialog">Cancel</button>
+        <button class="btn btn--primary" type="submit" id="product-submit">Add product</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Centre add / edit -->
+  <dialog id="centre-dialog" class="dialog" aria-labelledby="centre-dialog-title">
+    <form id="centre-form" class="dialog__card" novalidate>
+      <header class="dialog__head">
+        <div>
+          <h2 id="centre-dialog-title">Add Satsang Place</h2>
+          <p id="centre-dialog-sub">Create a Satsang place in the centre master.</p>
+        </div>
+        <button class="icon-btn icon-btn--small" type="button" data-action="close-dialog" aria-label="Close dialog">
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </header>
+      <div class="dialog__body">
+        <input type="hidden" name="original" />
+        <div class="form-grid">
+          <div class="field field--full">
+            <label for="centre-name">Centre name</label>
+            <input class="input" id="centre-name" name="name" type="text" autocomplete="off" maxlength="60" required placeholder="e.g. Faridabad Central" />
+            <span class="field-error" data-error-for="name"></span>
+          </div>
+          <div class="field field--full">
+            <label for="centre-area">Area Name</label>
+            <input class="input input--readonly" id="centre-area" name="areaName" type="text" value="Faridabad" readonly aria-readonly="true" tabindex="-1" />
+            <span class="field-hint">Fixed for every Satsang Place. This field cannot be changed.</span>
+          </div>
+          <div class="field">
+            <label for="centre-type">Type</label>
+            <div class="select-wrap">
+              <select class="input" id="centre-type" name="type" required>
+                <option value="Centre">Centre</option>
+                <option value="SubCentre">Sub-centre</option>
+                <option value="Point">Point</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </div>
+            <span class="field-error" data-error-for="type"></span>
+          </div>
+          <div class="field">
+            <label for="centre-code">Badge code</label>
+            <input class="input input--mono" id="centre-code" name="code" type="text" inputmode="numeric" pattern="\d{4}" autocomplete="off" maxlength="4" required placeholder="6012" />
+            <span class="field-error" data-error-for="code"></span>
+          </div>
+          <div class="field field--full">
+            <label for="centre-parent">Parent centre</label>
+            <div class="select-wrap">
+              <select class="input" id="centre-parent" name="parent"></select>
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </div>
+            <span class="field-error" data-error-for="parent"></span>
+          </div>
+          <div class="field field--full">
+            <label for="centre-incharge">Incharge name</label>
+            <div class="field-inline">
+              <input class="input" id="centre-incharge" name="incharge" type="text" autocomplete="off" maxlength="60" required placeholder="e.g. Ravi Kumar" />
+              <button class="btn btn--ghost" type="button" data-action="clear-incharge">Clear</button>
+            </div>
+            <span class="field-error" data-error-for="incharge"></span>
+          </div>
+          <div class="field">
+            <label for="centre-phone">Incharge phone no.</label>
+            <input class="input" id="centre-phone" name="inchargePhone" type="tel" autocomplete="off" maxlength="20" required placeholder="e.g. +91 98765 43210" />
+            <span class="field-error" data-error-for="inchargePhone"></span>
+          </div>
+          <div class="field">
+            <label for="centre-gmail">Email Id</label>
+            <input class="input" id="centre-gmail" name="gmail" type="email" autocomplete="off" maxlength="80" required placeholder="e.g. satsangplace@gmail.com" />
+            <span class="field-error" data-error-for="gmail"></span>
+          </div>
+          <p class="form-note field--full" data-centre-note></p>
+        </div>
+      </div>
+      <footer class="dialog__foot">
+        <button class="btn btn--ghost" type="button" data-action="close-dialog">Cancel</button>
+        <button class="btn btn--primary" type="submit" id="centre-submit">Add Satsang Place</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Stock movement -->
+  <dialog id="adjust-dialog" class="dialog" aria-labelledby="adjust-dialog-title">
+    <form id="adjust-form" class="dialog__card" novalidate>
+      <header class="dialog__head">
+        <div>
+          <h2 id="adjust-dialog-title">Move stock</h2>
+          <p id="adjust-dialog-sub">Record a receipt, dispatch, or count.</p>
+        </div>
+        <button class="icon-btn icon-btn--small" type="button" data-action="close-dialog" aria-label="Close dialog">
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </header>
+      <div class="dialog__body">
+        <div class="field">
+          <label for="adjust-product">Product</label>
+          <div class="select-wrap">
+            <select class="input" id="adjust-product" required></select>
+            <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+          </div>
+        </div>
+
+        <div class="adjust-summary" id="adjust-summary"></div>
+
+        <div class="field">
+          <span class="field-label" id="adjust-type-label">Movement type</span>
+          <div class="segmented" role="group" aria-labelledby="adjust-type-label">
+            <button type="button" class="segmented__btn" data-action="adjust-type" data-type="in" aria-pressed="true">Receive</button>
+            <button type="button" class="segmented__btn" data-action="adjust-type" data-type="out" aria-pressed="false">Remove</button>
+            <button type="button" class="segmented__btn" data-action="adjust-type" data-type="set" aria-pressed="false">Set count</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="adjust-qty" id="adjust-qty-label">Quantity to receive</label>
+          <div class="qty-row">
+            <input class="input input--num" id="adjust-qty" type="number" min="0" step="1" inputmode="numeric" required value="" placeholder="0" />
+            <div class="qty-presets" id="qty-presets"></div>
+          </div>
+          <span class="field-hint" id="adjust-qty-hint"></span>
+          <span class="field-error" data-error-for="qty"></span>
+        </div>
+
+        <div class="adjust-preview" id="adjust-preview" aria-live="polite"></div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="adjust-ref">Reference <span class="label-optional">optional</span></label>
+            <input class="input input--mono" id="adjust-ref" type="text" maxlength="24" placeholder="PO-2482" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="adjust-note">Note <span class="label-optional">optional</span></label>
+            <input class="input" id="adjust-note" type="text" maxlength="80" placeholder="e.g. Weekly replenishment" autocomplete="off" />
+          </div>
+        </div>
+        <span class="field-error" data-error-for="stock"></span>
+      </div>
+      <footer class="dialog__foot">
+        <button class="btn btn--ghost" type="button" data-action="close-dialog">Cancel</button>
+        <button class="btn btn--primary" type="submit" id="adjust-submit">Record movement</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Confirm -->
+  <dialog id="confirm-dialog" class="dialog dialog--confirm" aria-labelledby="confirm-title">
+    <form id="confirm-form" class="dialog__card" novalidate>
+      <header class="dialog__head">
+        <div>
+          <h2 id="confirm-title">Remove product?</h2>
+          <p id="confirm-message"></p>
+        </div>
+        <button class="icon-btn icon-btn--small" type="button" data-action="close-dialog" aria-label="Close dialog">
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </header>
+      <footer class="dialog__foot">
+        <button class="btn btn--ghost" type="button" data-action="close-dialog">Cancel</button>
+        <button class="btn btn--danger" type="submit" id="confirm-submit">Remove product</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Quick find -->
+  <dialog id="search-dialog" class="dialog dialog--search" aria-labelledby="search-dialog-title">
+    <div class="palette">
+      <h2 id="search-dialog-title" class="sr-only">Search products</h2>
+      <div class="palette__input-row">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="palette-input" type="text" placeholder="Search by product, SKU, or supplier…" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="palette-results" aria-autocomplete="list" />
+        <kbd>Esc</kbd>
+      </div>
+      <div class="palette__list" id="palette-results" role="listbox" aria-label="Products"></div>
+      <div class="palette__foot">
+        <span><kbd>↑</kbd><kbd>↓</kbd> to move</span>
+        <span><kbd>↵</kbd> to open</span>
+        <span data-palette-count></span>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="row-menu" id="row-menu" role="menu" hidden></div>
+  <div class="toast-stack" id="toast-stack" role="status" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="js/core.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/dialogs.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
